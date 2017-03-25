@@ -7,11 +7,11 @@ class Search extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            query : '', // on initialise query à rien, si rien n'est passé il nous affiche tout le data
+            query : '',
             showComponent : false,
             recherche : []
     }
-    this.handleChange = this.handleChange.bind(this); // On initie les this de chaques fonctions pour qu'ils correspondent au this à l'intérieur de chaque fonction
+    this.handleChange = this.handleChange.bind(this);
     this.handleKeyPress = this.handleKeyPress.bind(this);
     this.renderResult = this.renderResult.bind(this);
 }
@@ -19,11 +19,11 @@ class Search extends React.Component {
     componentDidMount() {
       var url = `https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.json`;
         axios.get(url).then((response) => {
-            this.setState({recherche : response.data.pokemon}); // this.setState : permet de return le resultat et de l'utiliser en global
+            this.setState({recherche : response.data.pokemon});
         });
     }
 
-    handleChange(event) { // quand input va changer : change la valeur de this.state.query
+    handleChange(event) {
         this.setState({query : event.target.value});
     }
     handleKeyPress(event) {
@@ -34,7 +34,7 @@ class Search extends React.Component {
         }
         console.log(this.state.showList);
     }
-// sous certaine conditions je renvoie du html
+
     renderResult() {
         return this.state.recherche.map((e, i) => {
             if (e.name.toLowerCase().includes(this.state.query.toLowerCase())) {
