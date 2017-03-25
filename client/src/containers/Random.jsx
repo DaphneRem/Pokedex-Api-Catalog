@@ -32,8 +32,8 @@ class Random extends React.Component {
     componentDidMount() {
         var url = `https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.json`;
         axios.get(url).then((response) => {
-            this.setState({dataRandom : this.shuffle(response.data.pokemon).slice(0,5)});
-            console.log({dataRandom : this.shuffle(response.data.pokemon).slice(0,5)});
+            this.setState({dataRandom : this.shuffle(response.data.pokemon).slice(0,10)});
+            console.log({dataRandom : this.shuffle(response.data.pokemon).slice(0,10)});
 
 
      });
