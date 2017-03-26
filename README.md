@@ -56,7 +56,7 @@ Démarrer le projet
 
     $ npm start
 
-Aller à l'adresse: http://localhost:3001/
+Aller à l'adresse: http://localhost:3000/
 
 -------------------
 
